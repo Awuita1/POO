@@ -1,0 +1,52 @@
+package modelo;
+
+public class Articulo {
+    private int codigo;
+    private String descripcion;
+    private double precio;
+    private int cantidad;
+
+    public Articulo(int codigo, String descripcion, double precio, int cantidad) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Articulo articulo = (Articulo) obj;
+        return codigo == articulo.codigo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(codigo);
+    }
+}
